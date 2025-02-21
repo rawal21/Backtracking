@@ -3,6 +3,7 @@ public class Nqueens {
   // Function to check if a queen can be placed at board[row][col]
   public static boolean isSafe(char board[][], int row, int col) {
     // Check the vertical column above the current row
+ 
     for (int i = row - 1; i >= 0; i--) { 
       if (board[i][col] == 'Q') { // If a queen is found in the same column
         return false;
@@ -28,10 +29,13 @@ public class Nqueens {
 
   // Function to solve the N-Queens problem and print solutions
   static boolean NqueensPrint(char board[][], int row) {
+   
     // Base case: If all queens are placed (row == board size), print the board
     if (row == board.length) {
       printBoard(board);
       System.out.println(); // Separate multiple solutions
+      count++;
+      System.out.println("number of possible soluation" + count );
       return true; // Indicates a solution is found
     }
 
@@ -62,6 +66,8 @@ public class Nqueens {
       System.out.println();
     }
   }
+
+  static int count = 0 ;
 
   public static void main(String[] args) {
     int n = 4; // Change N to 4 because N=2 and N=3 have no valid solutions
